@@ -12,16 +12,3 @@ export const NavBarData = [
         link: "/events"      
     }
 ]
-
-export const loginFormContent = [
-    {
-        type: "text",
-        name: "email",
-        placeholder: "Email"
-    },
-    {
-        type: "password",
-        name: "password",
-        placeholder: "Password"
-    }
-]
