@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import stockImage1 from "../../Utils/Images/stockimage1.png";
 import logo from "../../Utils/Images/navlogo.png";
 import { useAuth } from "../../Utils/useContext";
+import { useNavigate } from "react-router";
 
 const TriggerMessages = [
   "What is your end goal?",
@@ -27,7 +28,15 @@ const LandingPage = () => {
     return () => clearInterval(interval);
   }, []);
 
-    const { changeSignin, changeSignup } = useAuth();
+  const { changeSignin, changeSignup } = useAuth();
+  const navigate = useNavigate();
+  const handleLoginClick = () => {
+    navigate("/login");
+  };
+
+  const handleSignupClick = () => {
+    navigate("/signup");
+  };
 
   return (
     <div className="flex flex-col w-full">
@@ -41,10 +50,18 @@ const LandingPage = () => {
                 alt="navbar logo"
               />
               <div className="flex items-center justify-end gap-3">
-                <button className="text-black hover:text-orange-500 capitalize px-4 py-2 text-lg" onClick={changeSignin}>
+                <button
+                  className="text-black hover:text-orange-500 capitalize px-4 py-2 text-lg"
+                  onClick={handleLoginClick}
+                  // {changeSignin}
+                >
                   Login
                 </button>
-                <button className="text-white bg-black px-4 py-2 capitalize text-lg" onClick={changeSignup}>
+                <button
+                  className="text-white bg-black px-4 py-2 capitalize text-lg"
+                  onClick={handleSignupClick}
+                  // {changeSignup}
+                >
                   Signup
                 </button>
               </div>

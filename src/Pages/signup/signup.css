@@ -1,0 +1,18 @@
+.signup-container {
+  display: flex;
+  height: 100vh;
+}
+
+.signup-bg {
+  flex: 1;
+  background: url("../../assets/signupbg.svg") center/cover;
+}
+
+.signup-form {
+  flex: 1;
+}
+
+.signup-button{
+  background: #F8D5BD;
+
+}
